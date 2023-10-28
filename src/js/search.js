@@ -3,9 +3,9 @@ import axios from 'axios';
 let page;
 let previousQuery = '';
 
-export default async function fetchImgs(searchQuery) {
-  const BASE_API_URL = 'https://pixabay.com/api/';
-  const API_KEY = '40254298-f0122bcc19424dfed523c5016';
+export default async function fetchPic(searchQuery) {
+  const API_URL = 'https://pixabay.com/api/';
+  const API_KEY = '40336081-5219cc859e2994812c4617836';
 
   if (searchQuery !== previousQuery) {
     page = 1;
@@ -24,7 +24,7 @@ export default async function fetchImgs(searchQuery) {
   console.log(`searchQuery: ${searchQuery}, page до запиту: ${page}`);
 
   return await axios
-    .get(`${BASE_API_URL}`, {
+    .get(`${API_URL}`, {
       params,
       headers: {
         'Content-Type': 'application/json',
